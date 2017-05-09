@@ -2,8 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
+import Home from './components/home';
+
+// Importing React Router libraries
+import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
 ReactDOM.render(
-  <App />,
+  <Router history={browserHistory}>
+  	<Route path="/" component={App}>
+  		<IndexRoute component={Home}/>
+
+  	</Route>
+  </Router>,
   document.getElementById('root')
 );
