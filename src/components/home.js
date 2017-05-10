@@ -2,11 +2,26 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import '../css/Home.css';
 import {Button, FormGroup, FormControl} from 'react-bootstrap';
+import WeatherFetcher from '../utils/WeatherFetcher';
 
 class Home extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			loaded: false
+		}
+	}
+	componentDidMount() {
+			WeatherFetcher.fetchFiveDayWeather("bronx")
+				.then((data) => this.setState({fiveDayWeather: data.data, loaded: true}));
+		}
 
-
+		componentDidUpdate(){
+			debugger
+		}
 	render() {
+
+
 		return (
 			<div className="Home">
 				<div className="Instructions">
@@ -18,6 +33,7 @@ class Home extends Component {
 	    			</div>
 					<Button bsStyle="success" bsSize="large" >Get Weather</Button>
 				</div>
+
 			</div>
 		);
 	}
