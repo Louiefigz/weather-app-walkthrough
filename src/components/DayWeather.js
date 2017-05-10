@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 // import {Image, Col} from 'react-bootstrap';
-import { browserHistory } from 'react-router';
+// import { browserHistory } from 'react-router';
 
 class DayWeather extends Component {
 
 	render() {
-		debugger 
+		debugger
 		return (
 			<div>
 				<h1>Hola</h1>
