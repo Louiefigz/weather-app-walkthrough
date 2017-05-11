@@ -2,6 +2,20 @@ import React, { Component } from 'react';
 import {Button, Form, FormGroup, FormControl, Navbar, Nav, NavItem} from 'react-bootstrap';
 
 class MyNavbar extends Component {
+	constructor(){
+		super();
+		this.state={
+			value: ""
+		}
+		this.handleChange = this.handleChange.bind(this);
+		this.handleClick = this.handleClick.bind(this);
+	};
+
+	handleChange(event){
+		this.setState({ value: event.target.value});
+	}
+
+
 
 	render() {
 		return (
@@ -16,7 +30,7 @@ class MyNavbar extends Component {
 		              <NavItem>
 		                <Form inline className="Form">
 		                  <FormGroup controlId="formInlineName">
-		                    <FormControl type="text"  placeholder="New York, NY" />
+		                    <FormControl type="text"  placeholder="New York, NY" value={this.state.value} onChange={this.handleChange}/>
 		                    {' '}
 		                    <Button bsStyle="success" bsSize="small" onClick={this.handleClick}>Get Weather</Button>
 		                  </FormGroup>

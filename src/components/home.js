@@ -17,7 +17,7 @@ class Home extends Component {
 		}
 
 		componentDidUpdate(){
-			debugger
+			
 		}
 	render() {
 
