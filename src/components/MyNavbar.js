@@ -12,11 +12,17 @@ class MyNavbar extends Component {
 	};
 
 	handleChange(event){
+		//We are setting the value here once a user changes
+		//the input field
 		this.setState({ value: event.target.value});
 	}
 
+	handleClick(){
+		//here we're going to be making a change to our URL route.
+		//We will be using browserHistory once someone clicks on the
+		//"Get Weather" Button.
 
-
+	}
 	render() {
 		return (
 			<Navbar className="MyNav">
