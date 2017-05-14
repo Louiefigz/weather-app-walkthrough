@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import {Button, Form, FormGroup, FormControl, Navbar, Nav, NavItem} from 'react-bootstrap';
 
+//require browserHistory here.
+import { browserHistory } from 'react-router';
+
+
+
 class MyNavbar extends Component {
 	constructor(){
 		super();
@@ -18,11 +23,16 @@ class MyNavbar extends Component {
 	}
 
 	handleClick(){
-		//here we're going to be making a change to our URL route.
-		//We will be using browserHistory once someone clicks on the
-		//"Get Weather" Button.
-
+		// establish the path where we are sending our user to
+		const path = `/forecast/${this.state.value}`
+		// set the value back to an empty string
+		this.setState({value: ''})
+		//tell browserHistory where to go. It will go back to index.js
+		//where router is and go to the appropriate path.
+		// We are not sending the pat any data as of yet.
+		browserHistory.push(path)
 	}
+
 	render() {
 		return (
 			<Navbar className="MyNav">
